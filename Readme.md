@@ -213,9 +213,11 @@ contract Quiz {
     - 첫 번째 key는 quizId 값
     - 두 번째 key는 배팅한 유저의 주소
     - value는 배팅한 금액
+      
 - `mapping(uint => Quiz_item) public target`
     - key는 quizId
     - value는 저장된 각 Quiz_item 구조체의 정보
+      
 - `mapping(address => uint256) public reward`
     - key는 user 주소
     - value는 지급받을 보상 금액
@@ -224,28 +226,36 @@ contract Quiz {
 
 - **addPlayer()**
     - 함수를 호출한 주소를 플레이어로 등록하는 함수
+      
 - **addQuiz(Quiz_item memory q)**
     - 새로운 퀴즈를 추가하는 함수입니다.
     - `notPlayer` modifier을 통해 등록된 플레이어만 호출할 수 있습니다.
     - 호출 할때마다 quiz count는 증가하는데 이를 통해 새 quizId를 설정한 후 저장
+      
 - **getAnswer(uint quizId)**
     - quizId에 대한 퀴즈의 답을 반환하는 함수
+      
 - **getQuiz(uint quizId)**
     - quizId에 대한 퀴즈의 정보를 반환하는 함수
     - 제출할 정답은 초기화된 상태로 반환
+      
 - **getQuizNum()**
     - 현재 등록된 퀴즈의 총 개수를 반환하는 함수
+      
 - **betToPlay(uint quizId)**
     - quizId에 대한 퀴즈에 베팅하는 함수
     - 베팅 금액이 최소와 최대 사이인지 확인
     - 베팅 금액을 기록하고 vault_balance에 추가
+      
 - **solveQuiz(uint quizId, string memory ans)**
     - 퀴즈의 답을 제출하는 함수
     - 제출한 답이 맞으면 베팅 금액의 2배를 보상으로 기록하고 true를 반환
     - 틀리면 베팅 금액을 vault_balance에 추가하고 false를 반환
+      
 - **claim()**
     - 사용자가 획득한 보상을 청구하는 함수
     - 보상 금액을 0으로 리셋하고 해당 금액을 사용자에게 전송
+      
 - **receive()**
     - 이더를 직접 받을 수 있게 하는 함수이며 받은 이더를 vault_balance에 추가합니다.
 
