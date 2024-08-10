@@ -20,7 +20,7 @@ contract QuizTest is Test {
     function testAddQuizACL() public {
         uint quiz_num_before = quiz.getQuizNum();
         Quiz.Quiz_item memory q;
-        q.id = quiz_num_before + 1;
+        q.id = quiz_num_before + 1; // q.id = 1
         q.question = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         q.answer = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
         q.min_bet = 1 ether;
