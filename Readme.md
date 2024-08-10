@@ -118,7 +118,7 @@ function testMultiBet() public {
 - `claim` 함수를 호출한다.
 - 현재 balance - 이전 balance 한 값이 배팅한 금액의 2배를 가지고있어야한다.
 
-## 함수 구현
+## 구현
 
 ```solidity
 // SPDX-License-Identifier: MIT
